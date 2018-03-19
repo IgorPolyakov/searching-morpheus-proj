@@ -37,6 +37,8 @@
 		    cursor: pointer;
 		    -webkit-transition: all 0.4s;
 			transition: all 0.4s;
+			height: 15rem;
+			vertical-align: top;
 		}
 		
 		.card:hover{
