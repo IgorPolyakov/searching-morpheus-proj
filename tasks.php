@@ -4,7 +4,7 @@ $tasks = array();
 
 
 $tasks[] = array(
-	'id' => 1,
+	'id' => '01_neo',
 	'title' => 'Ты меня слушаешь, Нео?',
 	'description' => 'Прочитайте код из матрицы',
 	'image' => 'images/task1.png',
@@ -13,7 +13,7 @@ $tasks[] = array(
 
 
 $tasks[] = array(
-	'id' => 2,
+	'id' => '02_tele',
 	'title' => 'Какой толк от телефона, если сейчас вы немы?',
 	'description' => 'Определите номер из зашифрованного сигнала<br>
 		(Внимание 5 кратный роутинг)<br>
@@ -27,7 +27,7 @@ VlhwT2QxSnJNSGRPVkZwWVZrWktVVlpyVmtabFJsSnpWV3h3VVZWVU1Eaz0=</textarea>
 );
 
 $tasks[] = array(
-	'id' => 3,
+	'id' => '03_tuck_tuck',
 	'title' => 'Тук-тук, Нео',
 	'description' => 'У вас уже есть ответ на этот вопрос. Что вам известно о дебаге в вашем браузере?',
 	'image' => 'images/task3.png',
@@ -35,28 +35,28 @@ $tasks[] = array(
 );
 
 $tasks[] = array(
-	'id' => 4,
+	'id' => '04_wakeup',
 	'title' => 'Проснись, Нео…',
 	'image' => 'images/task4.png',
 	'flag' => '',
 );
 
 $tasks[] = array(
-	'id' => 5,
+	'id' => '05_spoon',
 	'title' => 'Не пытайся согнуть ложку; это невозможно',
 	'image' => 'images/task5.png',
 	'flag' => '',
 );
 
 $tasks[] = array(
-	'id' => 6,
+	'id' => '06_real',
 	'title' => 'Добро пожаловать в реальный мир',
 	'image' => 'images/task6.png',
 	'flag' => '',
 );
 
 $tasks[] = array(
-	'id' => 7,
+	'id' => '07_kill',
 	'title' => 'Убить Вас — наслаждение, мистер Андерсон',
 	'image' => 'images/task7.png',
 	'flag' => '',

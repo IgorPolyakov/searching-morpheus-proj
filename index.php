@@ -95,15 +95,12 @@
 		<?php 
 			
 			foreach($tasks as $k => $v){
-				echo '<div class="card border-dark mb-3 task-card" id="'.$v['id'].'">
+				echo '<div class="card border-dark mb-3 task-card" taskid="'.$v['id'].'">
 					<div class="task-icon" style="background-image: url('.$v['image'].');" alt="Card image"></div>
 					<div class="card-body">
 						<h4 class="card-title">'.$v['title'].'</h4>
 					</div>
 					<div class="task-description">'.$v['description'].'</div>
-					<!-- div class="card-body">
-						<a href="#" class="card-link">Подробнее</a>
-					</div -->
 				</div>';
 			}
 		
@@ -111,10 +108,31 @@
 		<script>
 			$('.task-card').unbind().bind('click', function(){
 				var title = $(this).find('.card-title').html();
+				window.taskid = $(this).attr('taskid');
+
 				$('#modal_title').html(title);
 				
 				var description = $(this).find('.task-description').html();
 				$('#modal_description').html(description);
+
+				$('#send_flag').unbind().bind('click', function(){
+					var url = 'send_flag.php?';
+					url += 'flag=' + encodeURIComponent($('#user_flag').val());
+					url += '&';
+					url += 'taskid=' + encodeURIComponent(window.taskid);
+
+					$.ajax({
+						type: 'GET',
+						url: url,
+					}).done(function(r){
+						console.log(r);
+					}).fail(function(err){
+						console.error(err);
+						if(err.responseJSON && err.responseJSON.error){
+							alert(err.responseJSON.error);
+						}
+					});
+				});
 
 				$('#task_show').modal();
 			});
@@ -134,12 +152,9 @@
 				<div id="modal_description"></div>
 				<hr>
 				<h3>Нашел ответ? </h3>
-				<input type="text" placeholder="Ответ" class="form-control"><br>
-				<button type="button" class="btn btn-primary">Отправить</button>
+				<input type="text" id="user_flag" placeholder="Ответ" class="form-control"><br>
+				<button type="button" id="send_flag" class="btn btn-primary">Отправить</button>
 			</div>
-			<!-- div class="modal-footer">
-			  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-			</div -->
 		  </div>
 		</div>
 	  </div>
