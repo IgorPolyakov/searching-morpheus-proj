@@ -57,7 +57,6 @@ if(!isset($_COOKIE['u'])){
 	}
 }
 
-
 if(!file_exists("sess/".$username)){
 	if(!mkdir("sess/".$username, 0777)){
 		http_response_code(500);

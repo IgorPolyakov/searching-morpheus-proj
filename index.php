@@ -1,3 +1,18 @@
+<?php
+	include_once("tasks.php");
+	foreach($tasks as $k => $v){
+		$tasks[$k]['solved'] = false;
+	}
+		
+	if(isset($_COOKIE['u'])){
+		$username = $_COOKIE['u'];
+		if(preg_match("/[0-9a-zA-Z]/i", $username)) {
+			foreach($tasks as $k => $v){
+				$tasks[$k]['solved'] = file_exists('sess/'.$username.'/task'.$v['id'].'.solved');
+			}
+		}
+	}
+?>
 <html lang="en"><head>
     <meta charset="utf-8">
     <title>Searching Morpheus</title>
@@ -73,10 +88,6 @@
       </div>
     </div>
 
-	<?php 
-		include_once("tasks.php");
-	?>
-
 	<div class="container text-center">
 		<h1 class="lead">26 март 2018 - 26 апреля 2018</h1>
 		<div class="row">
@@ -95,13 +106,15 @@
 		<?php 
 			
 			foreach($tasks as $k => $v){
-				echo '<div class="card border-dark mb-3 task-card" taskid="'.$v['id'].'">
-					<div class="task-icon" style="background-image: url('.$v['image'].');" alt="Card image"></div>
-					<div class="card-body">
-						<h4 class="card-title">'.$v['title'].'</h4>
-					</div>
-					<div class="task-description">'.$v['description'].'</div>
-				</div>';
+				if(!$v['solved']){
+					echo '<div class="card border-dark mb-3 task-card" taskid="'.$v['id'].'">
+						<div class="task-icon" style="background-image: url('.$v['image'].');" alt="Card image"></div>
+						<div class="card-body">
+							<h4 class="card-title">'.$v['title'].'</h4>
+						</div>
+						<div class="task-description">'.$v['description'].'</div>
+					</div>';	
+				}
 			}
 		
 		?>
