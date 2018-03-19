@@ -75,7 +75,10 @@
 		}
 
 	</style>
-  <body style="padding-top: 20px;">
+
+  <!-- body style="padding-top: 20px; background-image: url(http://mtdata.ru/u24/photo0F6F/20656638759-0/original.gif);" -->
+	<body style="padding-top: 20px; background-size: 100% 100%; background-image: url(https://media.giphy.com/media/2Nfwn4YN8njNK/source.gif);">
+	  
     <!-- div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
       <div class="container">
         <a href="./" class="navbar-brand">Searching Morpheus</a>
@@ -95,7 +98,7 @@
 				echo "</td></tr></table>";
 				exit;
 			}
-			
+
 			if($solved == $countTasks){
 				echo "<table style='width: 100%; height: 100%; text-align: center;'><tr><td>";
 				echo "<h1> Приходи в субботу к 17:00! <br><br> на Красноармейскую, дом 146, офис 805.<br><br>Не забудь пароль: <br><br>`Следовал за белым кроликом`</h1>";
@@ -105,7 +108,7 @@
 			
 		?>
 
-		<h2 class="lead" id="countdown">Осталось: ... </h2>
+		<h2 class="lead  alert alert-primary" id="countdown">Осталось: ... </h2>
 		
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
