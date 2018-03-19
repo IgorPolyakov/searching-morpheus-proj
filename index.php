@@ -90,9 +90,19 @@
 	<div class="container text-center">
 		<?php
 			if($endTime - time() < 0){
-				echo "<table style='width: 100%; height: 100%; text-align: center;'><tr><td><h1>Неуспели? Ждите и ищите следующие крошки.</h1></td></tr></table>";
+				echo "<table style='width: 100%; height: 100%; text-align: center;'><tr><td>";
+				echo "<h1>Неуспели? Ждите и ищите следующие крошки.</h1>";
+				echo "</td></tr></table>";
 				exit;
 			}
+			
+			if($solved == $countTasks){
+				echo "<table style='width: 100%; height: 100%; text-align: center;'><tr><td>";
+				echo "<h1> Приходи в субботу к 17:00! <br><br> на Красноармейскую, дом 146, офис 805.<br><br>Не забудь пароль: <br><br>`Следовал за белым кроликом`</h1>";
+				echo "</td></tr></table>";
+				exit;
+			}
+			
 		?>
 
 		<h2 class="lead" id="countdown">Осталось: ... </h2>
@@ -229,8 +239,6 @@
  </div>
 
 <!-- based: https://bootswatch.com/slate/ -->
-    
-
 </body></html>
 
 

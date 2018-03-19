@@ -40,7 +40,7 @@ $tasks[] = array(
 	'title' => 'Проснись, Нео…',
 	'image' => 'images/task4.png',
 	'description' => '',
-	'flag' => '',
+	'flag' => 'flag:',
 );
 
 $tasks[] = array(
@@ -48,7 +48,7 @@ $tasks[] = array(
 	'title' => 'Не пытайся согнуть ложку; это невозможно',
 	'image' => 'images/task5.png',
 	'description' => '',
-	'flag' => '',
+	'flag' => 'flag:',
 );
 
 $tasks[] = array(
@@ -56,7 +56,7 @@ $tasks[] = array(
 	'title' => 'Добро пожаловать в реальный мир',
 	'image' => 'images/task6.png',
 	'description' => '',
-	'flag' => '',
+	'flag' => 'flag:',
 );
 
 $tasks[] = array(
@@ -64,7 +64,7 @@ $tasks[] = array(
 	'title' => 'Убить Вас — наслаждение, мистер Андерсон',
 	'image' => 'images/task7.png',
 	'description' => '
-<pre>
+<pre style="text-align: left" class="alert alert-primary">
 ;nasm 2.11.08
 section .data
 data: 	db 65h, 6bh, 60h, 66h, 39h, 6dh, 60h, 72h, 6ch, 68h, 72h, 64h, 60h, 72h, 64h, 10
