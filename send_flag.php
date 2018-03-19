@@ -18,6 +18,13 @@ if(!isset($_GET['taskid'])){
 
 $taskid = $_GET['taskid'];
 $flag = $_GET['flag'];
+$flag = strtolower($flag);
+
+if(substr($flag,0,5) != 'flag:'){
+	http_response_code(400);
+	echo json_encode(array('error' => 'Вы забыли дописать flag:'));
+	exit;
+}
 
 $t = null;
 foreach($tasks as $k => $v){
@@ -33,7 +40,7 @@ if($t == null){
 }
 
 if($flag != $t['flag']){
-	http_response_code(403);
+	http_response_code(400);
 	echo json_encode(array('error' => 'Флаг не верный'));
 	exit;
 }

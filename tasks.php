@@ -6,7 +6,8 @@ $tasks = array();
 $tasks[] = array(
 	'id' => '01_neo',
 	'title' => 'Ты меня слушаешь, Нео?',
-	'description' => 'Прочитайте код из матрицы',
+	'description' => 'Прочитайте код из матрицы
+		<img src="files/red.jpg" width=100%>',
 	'image' => 'images/task1.png',
 	'flag' => 'flag:wakeupneo',
 );
@@ -31,13 +32,14 @@ $tasks[] = array(
 	'title' => 'Тук-тук, Нео',
 	'description' => 'У вас уже есть ответ на этот вопрос. Что вам известно о дебаге в вашем браузере?',
 	'image' => 'images/task3.png',
-	'flag' => 'flag:+1776890556',
+	'flag' => 'flag:gentlen',
 );
 
 $tasks[] = array(
 	'id' => '04_wakeup',
 	'title' => 'Проснись, Нео…',
 	'image' => 'images/task4.png',
+	'description' => '',
 	'flag' => '',
 );
 
@@ -45,6 +47,7 @@ $tasks[] = array(
 	'id' => '05_spoon',
 	'title' => 'Не пытайся согнуть ложку; это невозможно',
 	'image' => 'images/task5.png',
+	'description' => '',
 	'flag' => '',
 );
 
@@ -52,6 +55,7 @@ $tasks[] = array(
 	'id' => '06_real',
 	'title' => 'Добро пожаловать в реальный мир',
 	'image' => 'images/task6.png',
+	'description' => '',
 	'flag' => '',
 );
 
