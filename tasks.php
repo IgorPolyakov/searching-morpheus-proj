@@ -39,8 +39,8 @@ $tasks[] = array(
 	'id' => '04_wakeup',
 	'title' => 'Проснись, Нео…',
 	'image' => 'images/task4.png',
-	'description' => '',
-	'flag' => 'flag:',
+	'description' => 'Подключитесь к 185.53.169.102 на порт 3333 для получения инструкций. follow the rabbit.',
+	'flag' => 'flag:rabbittalkwithyou',
 );
 
 $tasks[] = array(
