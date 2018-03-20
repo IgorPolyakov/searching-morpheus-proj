@@ -20,7 +20,7 @@ $tasks[] = array(
 		(Внимание 5 кратный роутинг)<br>
 		<div class="form-group">
 		  <textarea class="form-control" id="readOnlyInput"  type="text" readonly="">
-VlhwT2QxSnJNSGRPVkZwWVZrWktVVlpyVmtabFJsSnpWV3h3VVZWVU1Eaz0=</textarea>
+VmpJd2VFNUhSa2RqUkZwcFRUQndUMVpyWkU1bGJGSjBZMGMxVDFaVVJrWldiRkpIVkRGd05rMUVhejA9</textarea>
 	  </div>
 	',
 	'image' => 'images/task2.png',
@@ -48,7 +48,7 @@ $tasks[] = array(
 	'title' => 'Не пытайся согнуть ложку; это невозможно',
 	'image' => 'images/task5.png',
 	'description' => '
-		Вщломай страницу <a href="files/cookie.php" target="_blank">здесь</a>
+		Взломай страницу <a href="files/cookie.php" target="_blank">здесь</a>
 	',
 	'flag' => 'flag:admincookienotgood',
 );
