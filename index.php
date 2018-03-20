@@ -63,11 +63,20 @@
 		
 		.task-icon{
 			height: 100px;
-			width: 100%;
+			width: 100px;
+			border-radius: 100px;
 			display: block;
 			background-repeat: no-repeat;
 			background-position: center;
 			margin-top: -30px;
+			box-shadow: 0px 0px 10px 3px #1c1e22;
+			transform: skewX(0deg);
+			 -webkit-transition: all 0.4s;
+			transition: all 0.4s;
+		}
+		
+		.card:hover .task-icon{
+			transform: translate(10px) skewX(-15deg);
 		}
 		
 		.task-description{
