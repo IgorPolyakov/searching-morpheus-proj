@@ -47,8 +47,10 @@ $tasks[] = array(
 	'id' => '05_spoon',
 	'title' => 'Не пытайся согнуть ложку; это невозможно',
 	'image' => 'images/task5.png',
-	'description' => '',
-	'flag' => 'flag:',
+	'description' => '
+		Вщломай страницу <a href="files/cookie.php" target="_blank">здесь</a>
+	',
+	'flag' => 'flag:admincookienotgood',
 );
 
 $tasks[] = array(
