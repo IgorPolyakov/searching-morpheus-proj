@@ -57,8 +57,9 @@ $tasks[] = array(
 	'id' => '06_real',
 	'title' => 'Добро пожаловать в реальный мир',
 	'image' => 'images/task6.png',
-	'description' => '',
-	'flag' => 'flag:',
+	'description' => 'Прочитайте код из матрицы
+		<img src="files/pills.jpg" width=100%>',
+	'flag' => 'flag:useexiflikecabincr3w',
 );
 
 $tasks[] = array(
