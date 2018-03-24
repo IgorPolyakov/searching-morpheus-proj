@@ -87,17 +87,6 @@
 
   <!-- body style="padding-top: 20px; background-image: url(http://mtdata.ru/u24/photo0F6F/20656638759-0/original.gif);" -->
 	<body style="padding-top: 20px; background-size: 100% 100%; background-image: url(https://media.giphy.com/media/2Nfwn4YN8njNK/source.gif);">
-	  
-    <!-- div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-      <div class="container">
-        <a href="./" class="navbar-brand">Searching Morpheus</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-        </div>
-      </div>
-    </div -->
 
 	<div class="container text-center">
 		<?php
@@ -122,6 +111,7 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
 				
+				<p class="lead">Разрешите вашему браузеру Cookie для этого сайта.</p>
 				<p class="lead">Что бы узнать где искать Морфеуса необходимо решить все задачи:</p>
 				<div class="progress">
 					<div class="progress-bar" role="progressbar" style="width: <?php echo $percent; ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
