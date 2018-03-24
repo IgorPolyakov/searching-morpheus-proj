@@ -18,7 +18,7 @@
 	$countTasks = count($tasks);
 	$percent = floor(($solved*100) / $countTasks);
 	$dateOfEnd = '2018-04-26 12:00:00';
-	
+
 	$endTime = strtotime($dateOfEnd);
 ?>
 <html lang="en"><head>
@@ -28,11 +28,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="./css/custom.min.css" media="screen">
-    
+
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
+
     <style>
 		.card{
 		    min-width: 15rem;
@@ -48,11 +48,11 @@
 			height: 15rem;
 			vertical-align: top;
 		}
-		
+
 		.card:hover{
 			transform: scale(1.1);
 		}
-		
+
 		.card.solved{
 			-webkit-filter: blur(5px);
 			-moz-filter: blur(5px);
@@ -60,7 +60,7 @@
 			-ms-filter: blur(5px);
 			filter: blur(5px);
 		}
-		
+
 		.task-icon{
 			height: 100px;
 			width: 100px;
@@ -74,11 +74,11 @@
 			 -webkit-transition: all 0.4s;
 			transition: all 0.4s;
 		}
-		
+
 		.card:hover .task-icon{
 			transform: translate(10px) skewX(-15deg);
 		}
-		
+
 		.task-description{
 			display: none;
 		}
@@ -92,27 +92,26 @@
 		<?php
 			if($endTime - time() < 0){
 				echo "<table style='width: 100%; height: 100%; text-align: center;'><tr><td>";
-				echo "<h1>Неуспели? Ждите и ищите следующие крошки.</h1>";
+				echo "<h1>Не успели? Ждите, и ищите следующие крошки.</h1>";
 				echo "</td></tr></table>";
 				exit;
 			}
 
 			if($solved == $countTasks){
 				echo "<table style='width: 100%; height: 100%; text-align: center;'><tr><td>";
-				echo "<h1> Приходи в субботу к 17:00! <br><br> на Красноармейскую, дом 146, офис 805.<br><br>Не забудь пароль: <br><br>`Следовал за белым кроликом`</h1>";
+				echo "<h1> Приходи!<br><br>Суббота, 17:00, Красноармейская 146, офис 805 (дверь без номера).<br><br>Не забудь пароль: `Следовал за белым кроликом`</h1>";
 				echo "</td></tr></table>";
 				exit;
 			}
-			
+
 		?>
 
 		<h2 class="lead  alert alert-primary" id="countdown">Осталось: ... </h2>
-		
+
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
-				
 				<p class="lead">Разрешите вашему браузеру Cookie для этого сайта.</p>
-				<p class="lead">Что бы узнать где искать Морфеуса необходимо решить все задачи:</p>
+				<p class="lead">Чтобы узнать, где искать Морфеуса, необходимо решить все задачи:</p>
 				<div class="progress">
 					<div class="progress-bar" role="progressbar" style="width: <?php echo $percent; ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 				</div>
@@ -122,12 +121,12 @@
           </div>
         </div>
         <hr>
-		
-			
-		<?php 
-			
+
+
+		<?php
+
 			if($solved == $countTasks){
-				echo "<h1> Приходи! суббота 17:00 Красноармейская 146 (Корпус УЛК 805 аудитория).<br>Незабудь пароль: `Следовал за белым кроликом`</h1>";
+				echo "<h1> Приходи! Суббота, 17:00, Красноармейская 146, офис 805 (дверь без номера).<br>Не забудь пароль: `Следовал за белым кроликом`</h1>";
 			}else{
 				echo "<p> Формат ответа: 'flag:some'</p>";
 				foreach($tasks as $k => $v){
@@ -138,7 +137,7 @@
 								<h4 class="card-title">'.$v['title'].'</h4>
 							</div>
 							<div class="task-description">'.$v['description'].'</div>
-						</div>';	
+						</div>';
 					}
 				}
 			}
@@ -149,17 +148,17 @@
 				window.taskid = $(this).attr('taskid');
 
 				$('#modal_title').html(title);
-				
+
 				$('#user_flag').val('');
-				
+
 				var description = $(this).find('.task-description').html();
 				$('#modal_description').html(description);
 				$('#error_send_flag').hide();
-				
+
 				$('#send_flag').unbind().bind('click', function(){
 					$('#error_send_flag').hide();
 					$('#error_send_flag').html('');
-					
+
 					var url = 'send_flag.php?';
 					url += 'flag=' + encodeURIComponent($('#user_flag').val());
 					url += '&';
@@ -197,11 +196,11 @@
 				text += hours + " час";
 				text += ((hours % 10 == 2 || hours % 10 == 3 || hours % 10 == 4) && (hours < 10 || hours > 20) ? "a" : "");
 				text += ((hours % 10 == 0 || hours % 10 > 4) || (hours >= 10 && hours < 21) ? "ов" : "");
-				
+
 				text += " " + minutes + " минут";
 				text += (minutes % 10 == 1 ? "a" : "");
 				text += (minutes % 10 == 2 || minutes % 10 == 3 || minutes % 10 == 4 ? "ы" : "");
-				
+
 				text += " " + seconds + " секунд";
 				text += (seconds % 10 == 1 ? "a" : "");
 				text += (seconds % 10 == 2 || seconds % 10 == 3 || seconds % 10 == 4 ? "ы" : "");
@@ -209,10 +208,10 @@
 				$('#countdown').html(text);
 			}
 			updateCountdown();
-			
+
 			setInterval(updateCountdown,1000);
-			
-			
+
+
 		</script>
 
 
@@ -237,7 +236,7 @@
 		  </div>
 		</div>
 	  </div>
-    
+
  </div>
 
 <!-- based: https://bootswatch.com/slate/ -->
@@ -297,5 +296,3 @@
 <script>
 	console.log("flag:gentlen");
 </script>
-
-

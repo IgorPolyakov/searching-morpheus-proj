@@ -41,7 +41,7 @@ if($t == null){
 
 if($flag != $t['flag']){
 	http_response_code(400);
-	echo json_encode(array('error' => 'Флаг не верный'));
+	echo json_encode(array('error' => 'Неверный флаг'));
 	exit;
 }
 
@@ -81,5 +81,5 @@ if(file_exists("sess/".$username.'/task'.$taskid.'.solved')){
 }
 
 http_response_code(200);
-echo json_encode(array('result' => 'И это правильный ответ! Вы стали ближе на шаг к морфеусу.'));
+echo json_encode(array('result' => 'И это правильный ответ! Вы стали на шаг ближе на к Морфеусу.'));
 exit;
