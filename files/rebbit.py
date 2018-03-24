@@ -19,7 +19,7 @@ class Connect(threading.Thread):
 		self.bKill = False
 		threading.Thread.__init__(self)
 	def run (self):
-		self.sock.send("Wakeup Neo… The Matrix has you\n> ")
+		self.sock.send("Wake up, Neo… The Matrix has you\n> ")
 		buf = self.sock.recv(20)
 		buf = buf.strip()
 		if buf == "follow the rabbit":

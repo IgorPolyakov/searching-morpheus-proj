@@ -17,7 +17,7 @@ $tasks[] = array(
 	'id' => '02_tele',
 	'title' => 'Какой толк от телефона, если сейчас вы немы?',
 	'description' => 'Определите номер из зашифрованного сигнала<br>
-		(Внимание 5 кратный роутинг)<br>
+		(Внимание, 5 кратный роутинг)<br>
 		<div class="form-group">
 		  <textarea class="form-control" id="readOnlyInput"  type="text" readonly="">
 VmpJd2VFNUhSa2RqUkZwcFRUQndUMVpyWkU1bGJGSjBZMGMxVDFaVVJrWldiRkpIVkRGd05rMUVhejA9</textarea>
@@ -30,7 +30,7 @@ VmpJd2VFNUhSa2RqUkZwcFRUQndUMVpyWkU1bGJGSjBZMGMxVDFaVVJrWldiRkpIVkRGd05rMUVhejA9
 $tasks[] = array(
 	'id' => '03_tuck_tuck',
 	'title' => 'Тук-тук, Нео',
-	'description' => 'У вас уже есть ответ на этот вопрос. Что вам известно о дебаге в вашем браузере?',
+	'description' => 'У вас уже есть ответ на этот вопрос. Что вам известно о дебаге в браузере?',
 	'image' => 'images/task3.png',
 	'flag' => 'flag:gentlen',
 );
@@ -45,7 +45,7 @@ $tasks[] = array(
 
 $tasks[] = array(
 	'id' => '05_spoon',
-	'title' => 'Не пытайся согнуть ложку; это невозможно',
+	'title' => 'Не пытайся согнуть ложку. Это невозможно',
 	'image' => 'images/task5.png',
 	'description' => '
 		Взломай страницу <a href="files/cookie.php" target="_blank">здесь</a>
