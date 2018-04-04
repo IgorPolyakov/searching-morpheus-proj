@@ -86,7 +86,7 @@
 	</style>
 
   <!-- body style="padding-top: 20px; background-image: url(http://mtdata.ru/u24/photo0F6F/20656638759-0/original.gif);" -->
-	<body style="padding-top: 20px; background-size: 100% 100%; background-image: url(https://media.giphy.com/media/2Nfwn4YN8njNK/source.gif);">
+	<body style="padding-top: 20px; background-size: 100% 100%; background-image: url(images/source.gif);">
 
 	<div class="container text-center">
 		<?php
@@ -183,7 +183,9 @@
 			});
 
 			var dateOfEnd = new Date('<?php echo $dateOfEnd; ?>');
-			dateOfEnd = Math.floor(dateOfEnd.getTime()/1000);
+			var timeOfEnd = <?php echo $endTime; ?>;
+			// dateOfEnd = Math.floor(dateOfEnd.getTime()/1000);
+			dateOfEnd = timeOfEnd;
 			function updateCountdown(){
 				var currDate = new Date();
 				currDate = Math.floor(currDate.getTime()/1000);
