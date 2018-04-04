@@ -73,15 +73,18 @@ echo "
 foreach($files as $f){
 	$d = $sess_dir.'/'.$f;
 	if(is_dir($d) && $f != '.' && $f != '..'){
+		$dt_u = date("F d Y H:i:s.", filemtime($d));
 		echo "<tr>
-          	      <td>".$f."</td>
+          	      <td><b>".$f."</b><br><small>".$dt_u."</small></td>
 	        ";
 		foreach($tasks as $task){
-			if(file_exists($d.'/task'.$task['id'].'.solved')){
-        	                echo "<td class='table-success solved'>+</td>";
-	                }else{
-                	        echo "<td>-</td>";
-	                }
+			$file_task_name = $d.'/task'.$task['id'].'.solved';
+			if(file_exists($file_task_name)){
+					$dt_ft = date("F d Y H:i:s.", filemtime($file_task_name));
+					echo "<td class='table-success solved'>".$dt_ft."</td>";
+			}else{
+					echo "<td></td>";
+			}
 		}
 		echo "</tr>";
 	}
