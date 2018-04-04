@@ -57,7 +57,7 @@ if(!isset($_COOKIE['u'])){
 	setcookie('u', $username, time() + 3600*24*35); // 35 days
 }else{
 	$username = $_COOKIE['u'];
-	if (!preg_match("/[0-9a-zA-Z]/i", $username)) {
+	if (!preg_match("/^[0-9a-zA-Z]+$/", $username)) {
 		http_response_code(403);
 		echo json_encode(array('error' => 'Да вы, батенька, хакер! Не нужно менять свои куки и пытаться взломать меня.'));
 		exit;

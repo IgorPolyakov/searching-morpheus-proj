@@ -103,10 +103,16 @@
 				echo "</td></tr></table>";
 				exit;
 			}
-
+			if(!empty($username)){
+				echo '<h2 class="lead alert alert-primary">Ваш username: '.htmlspecialchars($username).' <div class="btn btn-secondary" id="change_username">Сменить</div></h2>';
+			}
 		?>
 
 		<h2 class="lead  alert alert-primary" id="countdown">Осталось: ... </h2>
+
+		
+		
+		
 
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
@@ -213,6 +219,34 @@
 
 			setInterval(updateCountdown,1000);
 
+			$('#change_username').unbind().bind('click', function(){
+				$('#error_username').hide();
+				
+				
+				$('#username_new_set').unbind().bind('click', function(){
+					$('#error_username').hide();
+					$('#error_username').html('');
+
+					var url = 'change_username.php?';
+					url += 'new=' + encodeURIComponent($('#username_new').val());
+
+					$.ajax({
+						type: 'GET',
+						url: url,
+					}).done(function(r){
+						console.log(r);
+						window.location.reload();
+					}).fail(function(err){
+						console.error(err);
+						if(err.responseJSON && err.responseJSON.error){
+							$('#error_username').show();
+							$('#error_username').html(err.responseJSON.error);
+						}
+					});
+				});
+				$('#username_new').val('<?php echo htmlspecialchars($username); ?>');
+				$('#modal_change_username').modal();
+			});
 
 		</script>
 
@@ -234,6 +268,25 @@
 				<button type="button" id="send_flag" class="btn btn-primary">Отправить</button>
 				<br><br>
 				<div id="error_send_flag" class="alert alert-danger" style="display: none;"></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+	  <div class="modal fade show" id="modal_change_username">
+		<div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title">Сменить имя пользователя</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">×</span>
+			  </button>
+			</div>
+			<div class="modal-body" >
+				<input type="text" id="username_new" placeholder="new username" maxlength=15 class="form-control"><br>
+				<button type="button" id="username_new_set" class="btn btn-primary">Отправить</button>
+				<br><br>
+				<div id="error_username" class="alert alert-danger" style="display: none;"></div>
 			</div>
 		  </div>
 		</div>
